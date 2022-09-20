@@ -27,11 +27,10 @@ public class BmiService {
         return "\033[34mВыраженный дефицит массы тела\033[0m";
     }
 
-    public String colorInterpretation(double weightKg, double heightSm) {
-        double bmi = calculate(weightKg, heightSm);
-        String sbmi = String.format("%.2f", bmi);
+    public static String colorInterpretation(double bmi) {
+        String sbmi = String.format("%6.2f", bmi);
         if (bmi >= 40.0) {
-            return "\033[91m%" + sbmi + "\033[0m";
+            return "\033[91m" + sbmi + "\033[0m";
         }
         if (bmi >= 35.0) {
             return "\033[31m" + sbmi + "\033[0m";
